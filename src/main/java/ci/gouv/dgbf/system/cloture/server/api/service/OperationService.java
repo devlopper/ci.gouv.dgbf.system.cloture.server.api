@@ -28,11 +28,11 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 			,@APIResponse(description = "Erreur lors de l'exécution d'une opération",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response execute(
-		@Parameter(name = PARAMETER_NAME_IDENTIFIER,description = PARAMETER_NAME_IDENTIFIER_DESCRIPTION_FRENCH)
-		@QueryParam(PARAMETER_NAME_IDENTIFIER) String identifier
+		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
+		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
 		
-		,@Parameter(name = PARAMETER_NAME_TRIGGER,description = "Nom utilisateur")
-		@QueryParam(PARAMETER_NAME_TRIGGER) String trigger
+		,@Parameter(name = OperationDto.JSON_TRIGGER,description = "Déclencheur")
+		@QueryParam(OperationDto.JSON_TRIGGER) String trigger
 		
 		,@Parameter(name = PARAMETER_NAME_BLOCKING,description = "Bloquant")
 		@QueryParam(PARAMETER_NAME_BLOCKING) Boolean blocking
@@ -51,6 +51,6 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 		@QueryParam(PARAMETER_NAME_IDENTIFIER) String identifier
 	);
 	*/
-	String PARAMETER_NAME_TRIGGER = "nom_utilisateur";
+	
 	String PARAMETER_NAME_BLOCKING = "bloquant";
 }
