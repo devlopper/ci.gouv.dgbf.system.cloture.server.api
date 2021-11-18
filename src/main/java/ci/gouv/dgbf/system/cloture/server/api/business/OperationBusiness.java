@@ -9,5 +9,8 @@ import ci.gouv.dgbf.system.cloture.server.api.persistence.Operation;
 public interface OperationBusiness extends SpecificBusiness<Operation> {
 
 	@Transactional
+	void execute(String identifier,String trigger,Boolean blocking);
+	
+	@Transactional
 	void execute(String identifier,String trigger);
 }

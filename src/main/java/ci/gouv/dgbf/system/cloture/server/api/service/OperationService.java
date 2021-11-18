@@ -30,6 +30,27 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 	Response execute(
 		@Parameter(name = PARAMETER_NAME_IDENTIFIER,description = PARAMETER_NAME_IDENTIFIER_DESCRIPTION_FRENCH)
 		@QueryParam(PARAMETER_NAME_IDENTIFIER) String identifier
+		
+		,@Parameter(name = PARAMETER_NAME_TRIGGER,description = "Nom utilisateur")
+		@QueryParam(PARAMETER_NAME_TRIGGER) String trigger
+		
+		,@Parameter(name = PARAMETER_NAME_BLOCKING,description = "Bloquant")
+		@QueryParam(PARAMETER_NAME_BLOCKING) Boolean blocking
 	);
-	
+	/*
+	@GET
+	@Path("status")
+	@Produces({MediaType.TEXT_PLAIN})
+	@Operation(description = "Obtenir le status d'exécution d'une opération")
+	@APIResponses(value = {
+			@APIResponse(description = "Le status d'exécution d'une opération obtenue",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			,@APIResponse(description = "Erreur lors de l'obtention du status d'exécution d'une opération",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response getStatus(
+		@Parameter(name = PARAMETER_NAME_IDENTIFIER,description = PARAMETER_NAME_IDENTIFIER_DESCRIPTION_FRENCH)
+		@QueryParam(PARAMETER_NAME_IDENTIFIER) String identifier
+	);
+	*/
+	String PARAMETER_NAME_TRIGGER = "nom_utilisateur";
+	String PARAMETER_NAME_BLOCKING = "bloquant";
 }

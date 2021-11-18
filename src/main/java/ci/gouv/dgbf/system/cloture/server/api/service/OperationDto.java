@@ -7,12 +7,12 @@ public interface OperationDto extends IdentifiableSystemScalarStringIdentifiable
 	String getGroupIdentifier();
 	OperationDto setGroupIdentifier(String groupIdentifier);
 	
-	Long getEndDateNumberOfMillisecond();
-	OperationDto setEndDateNumberOfMillisecond(Long endDateNumberOfMillisecond);
+	Long getStartDateNumberOfMillisecond();
+	OperationDto setStartDateNumberOfMillisecond(Long startDateNumberOfMillisecond);
 	
 	String JSON_IDENTIFIER = "identifiant";
 	String JSON_CODE = "code";
 	String JSON_NAME = "libelle";
 	String JSON_GROUP_IDENTIFIER = "groupe_identifiant";
-	String JSON_END_DATE_NUMBER_OF_MILLISECOND = "date_fin_nombre_milliseconde";
+	String JSON_START_DATE_NUMBER_OF_MILLISECOND = "date_debut_nombre_milliseconde";
 }

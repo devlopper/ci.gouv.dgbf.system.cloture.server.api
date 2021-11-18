@@ -12,10 +12,13 @@ public interface Operation extends IdentifiableSystemScalarStringIdentifiableBus
 	String getGroupIdentifier();
 	Operation setGroupIdentifier(String groupIdentifier);
 	
-	LocalDateTime getEndDate();
-	Operation setEndDate(LocalDateTime endDate);
+	LocalDateTime getStartDate();
+	Operation setStartDate(LocalDateTime startDate);
 	
 	/* Execution */
+	
+	String getProcedureName();
+	Operation setProcedureName(String procedureName);
 	
 	String getTrigger();
 	Operation setTrigger(String trigger);
@@ -25,4 +28,7 @@ public interface Operation extends IdentifiableSystemScalarStringIdentifiableBus
 	
 	LocalDateTime getExecutionEndDate();
 	Operation setExecutionEndDate(LocalDateTime executionEndDate);
+	
+	OperationExecutionStatus getExecutionStatus();
+	Operation setExecutionStatus(OperationExecutionStatus executionStatus);
 }
