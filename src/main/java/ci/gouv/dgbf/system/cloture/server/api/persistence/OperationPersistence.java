@@ -4,5 +4,5 @@ import org.cyk.utility.persistence.SpecificPersistence;
 
 public interface OperationPersistence extends SpecificPersistence<Operation> {
 
-	String executeProcedure(String name);
+	void executeProcedure(String name);
 }
