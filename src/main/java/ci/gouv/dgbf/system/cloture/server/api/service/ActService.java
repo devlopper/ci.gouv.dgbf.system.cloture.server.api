@@ -20,18 +20,18 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 @Tag(name = "Actes",description = "Gestions des actes")
 public interface ActService extends org.cyk.utility.service.SpecificService<ActDto> {
 	String PATH = "actes";
-	/*
+	
 	@POST
 	@Path("verouillage")
 	@Produces({MediaType.APPLICATION_JSON})
-	@Operation(description = "Vérouiller une liste d'actes")
+	@Operation(description = "Verouiller une liste d'actes")
 	@APIResponses(value = {
-			@APIResponse(description = "Une liste d'actes vérouillés",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
-			,@APIResponse(description = "Erreur lors du vérouillage d'une liste d'actes",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(description = "Une liste d'actes verouillés",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			,@APIResponse(description = "Erreur lors du verouillage d'une liste d'actes",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response lock(
-			@Parameter(name = ActDto.JSON_IDENTIFIER,description = "Identifiant")
-			@QueryParam(ActDto.JSON_IDENTIFIER) List<String> identifiers
+			@Parameter(name = "identifiants",description = "Identifiants")
+			@QueryParam("identifiants") List<String> identifiers
 			
 			,@Parameter(name = ActDto.JSON_TRIGGER,description = "Déclencheur")
 			@QueryParam(ActDto.JSON_TRIGGER) String trigger);
@@ -39,16 +39,15 @@ public interface ActService extends org.cyk.utility.service.SpecificService<ActD
 	@POST
 	@Path("deverouillage")
 	@Produces({MediaType.APPLICATION_JSON})
-	@Operation(description = "Dévérouiller une liste d'actes")
+	@Operation(description = "Déverouiller une liste d'actes")
 	@APIResponses(value = {
-			@APIResponse(description = "Une liste d'actes dévérouillés",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
-			,@APIResponse(description = "Erreur lors du dévérouillage d'une liste d'actes",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(description = "Une liste d'actes déverouillés",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			,@APIResponse(description = "Erreur lors du déverouillage d'une liste d'actes",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response unlock(
-			@Parameter(name = ActDto.JSON_IDENTIFIER,description = "Identifiant")
-			@QueryParam(ActDto.JSON_IDENTIFIER) List<String> identifiers
+			@Parameter(name = "identifiants",description = "Identifiants")
+			@QueryParam("identifiants") List<String> identifiers
 			
 			,@Parameter(name = ActDto.JSON_TRIGGER,description = "Déclencheur")
 			@QueryParam(ActDto.JSON_TRIGGER) String trigger);
-	*/
 }
