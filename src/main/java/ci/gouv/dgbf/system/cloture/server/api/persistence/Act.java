@@ -4,6 +4,12 @@ import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifi
 
 public interface Act extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 	
+	ActType getType();
+	Act setType(ActType type);
+	
+	String getReference();
+	Act setReference(String trigger);
+	
 	ActOperationType getOperationType();
 	Act setOperationType(ActOperationType operationType);
 	/*
