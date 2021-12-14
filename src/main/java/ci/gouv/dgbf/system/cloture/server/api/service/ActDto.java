@@ -16,4 +16,7 @@ public interface ActDto extends IdentifiableSystemScalarStringIdentifiableBusine
 	String JSON_OPERATION_TYPE = "operation";
 	String JSON_TRIGGER = "operation_declencheur";
 	String JSON_OPERATION_DATE_STRING = "operation_date";
+	String JSON_LOCKED = "verouille";
+	String JSON_NUMBER_OF_LOCKS = "nombre_verrou";
+	String JSON_NUMBER_OF_LOCKS_ENABLED = "nombre_verrou_actif";
 }
