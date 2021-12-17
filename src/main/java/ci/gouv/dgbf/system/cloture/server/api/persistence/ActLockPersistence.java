@@ -6,6 +6,6 @@ import org.cyk.utility.persistence.SpecificPersistence;
 
 public interface ActLockPersistence extends SpecificPersistence<ActLock> {
 
-	Collection<Object[]> readWhereEnabledIsTrueByActIdentifiersForOperation(Collection<String> actIdentifiers);
+	Collection<Object[]> readWhereEnabledIsTrueByActIdentifiersForOperation(Collection<String> actsIdentifiers);
 	
 }
