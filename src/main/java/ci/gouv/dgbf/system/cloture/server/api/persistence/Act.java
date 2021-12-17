@@ -1,5 +1,7 @@
 package ci.gouv.dgbf.system.cloture.server.api.persistence;
 
+import java.util.Collection;
+
 import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifiableBusinessStringNamable;
 
 public interface Act extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
@@ -21,4 +23,6 @@ public interface Act extends IdentifiableSystemScalarStringIdentifiableBusinessS
 	
 	String getTrigger();
 	Act setTrigger(String trigger);
+	
+	Collection<String> getLockedReasons();
 }

@@ -4,6 +4,9 @@ import org.cyk.utility.service.entity.IdentifiableSystemScalarString;
 
 public interface ActLock extends IdentifiableSystemScalarString {
 	
+	String getActIdentifier();
+	ActLock setActIdentifier(String actIdentifier);
+	
 	String getActReference();
 	ActLock setActReference(String actReference);
 	
