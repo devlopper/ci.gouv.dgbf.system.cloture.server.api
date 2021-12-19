@@ -49,5 +49,8 @@ public interface ActService extends org.cyk.utility.service.SpecificService<ActD
 			@QueryParam("identifiants") List<String> identifiers
 			
 			,@Parameter(name = ActDto.JSON_TRIGGER,description = "Déclencheur")
-			@QueryParam(ActDto.JSON_TRIGGER) String trigger);
+			@QueryParam(ActDto.JSON_TRIGGER) String trigger
+			
+			,@Parameter(name = ActDto.JSON_PROCESSED_IGNORABLE,description = "Ne pas traiter les actes déja déverouillés")
+			@QueryParam(ActDto.JSON_PROCESSED_IGNORABLE) Boolean processedIgnorable);
 }

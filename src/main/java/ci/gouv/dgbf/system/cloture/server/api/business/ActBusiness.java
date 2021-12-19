@@ -17,8 +17,8 @@ public interface ActBusiness extends SpecificBusiness<Act> {
 	void lock(String trigger,String...identifiers);
 	
 	@Transactional
-	void unlock(Collection<String> identifiers,String trigger);
+	Integer unlock(Collection<String> identifiers,String trigger,Boolean processedIgnorable);
 	
 	@Transactional
-	void unlock(String trigger,String...identifiers);
+	Integer unlock(String trigger,Boolean processedIgnorable,String...identifiers);
 }
