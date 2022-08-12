@@ -1,34 +1,21 @@
 package ci.gouv.dgbf.system.cloture.server.api.persistence;
 
-import java.time.LocalDateTime;
-
 import org.cyk.utility.persistence.entity.IdentifiableSystemScalarStringIdentifiableBusinessStringNamable;
 
 public interface Operation extends IdentifiableSystemScalarStringIdentifiableBusinessStringNamable {
 	
-	OperationGroup getGroup();
-	Operation setGroup(Operation group);
+	OperationType getType();
+	Operation setType(OperationType type);
 	
-	String getGroupIdentifier();
-	Operation setGroupIdentifier(String groupIdentifier);
+	String getReason();
+	Operation setReason(String reason);
 	
-	LocalDateTime getStartDate();
-	Operation setStartDate(LocalDateTime startDate);
+	@Override
+	Operation setCode(String code);
 	
-	/* Execution */
+	@Override
+	Operation setName(String name);
 	
-	String getProcedureName();
-	Operation setProcedureName(String procedureName);
-	
-	String getTrigger();
-	Operation setTrigger(String trigger);
-	
-	LocalDateTime getExecutionBeginDate();
-	Operation setExecutionBeginDate(LocalDateTime executionBeginDate);
-	
-	LocalDateTime getExecutionEndDate();
-	Operation setExecutionEndDate(LocalDateTime executionEndDate);
-	
-	OperationExecutionStatus getExecutionStatus();
-	Operation setExecutionStatus(OperationExecutionStatus executionStatus);
+	String NAME = "Opération";
+	String NAME_PLURAL = NAME+"s";
 }

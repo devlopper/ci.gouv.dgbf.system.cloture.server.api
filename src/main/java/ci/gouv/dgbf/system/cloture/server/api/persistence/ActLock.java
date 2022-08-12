@@ -10,8 +10,8 @@ public interface ActLock extends IdentifiableSystemScalarString {
 	String getActReference();
 	ActLock setActReference(String actReference);
 	
-	ActType getActType();
-	ActLock setActType(ActType actType);
+	ActTypeEnum getActType();
+	ActLock setActType(ActTypeEnum actType);
 	
 	String getReason();
 	ActLock setReason(String reason);

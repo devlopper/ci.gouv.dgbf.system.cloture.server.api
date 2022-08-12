@@ -33,8 +33,8 @@ public interface ActService extends org.cyk.utility.service.SpecificService<ActD
 			@Parameter(name = "identifiants",description = "Identifiants")
 			@QueryParam("identifiants") List<String> identifiers
 			
-			,@Parameter(name = ActDto.JSON_TRIGGER,description = "Déclencheur")
-			@QueryParam(ActDto.JSON_TRIGGER) String trigger);
+			,/*@Parameter(name = ActDto.JSON_TRIGGER,description = "Déclencheur")
+			@QueryParam(ActDto.JSON_TRIGGER)*/ String trigger);
 	
 	@POST
 	@Path("deverouillage")
@@ -48,9 +48,9 @@ public interface ActService extends org.cyk.utility.service.SpecificService<ActD
 			@Parameter(name = "identifiants",description = "Identifiants")
 			@QueryParam("identifiants") List<String> identifiers
 			
-			,@Parameter(name = ActDto.JSON_TRIGGER,description = "Déclencheur")
-			@QueryParam(ActDto.JSON_TRIGGER) String trigger
+			,/*@Parameter(name = ActDto.JSON_TRIGGER,description = "Déclencheur")
+			@QueryParam(ActDto.JSON_TRIGGER)*/ String trigger
 			
-			,@Parameter(name = ActDto.JSON_PROCESSED_IGNORABLE,description = "Ne pas traiter les actes déja déverouillés")
-			@QueryParam(ActDto.JSON_PROCESSED_IGNORABLE) Boolean processedIgnorable);
+			,/*@Parameter(name = ActDto.JSON_PROCESSED_IGNORABLE,description = "Ne pas traiter les actes déja déverouillés")
+			@QueryParam(ActDto.JSON_PROCESSED_IGNORABLE)*/ Boolean processedIgnorable);
 }
