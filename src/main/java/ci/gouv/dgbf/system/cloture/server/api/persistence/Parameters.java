@@ -4,6 +4,7 @@ public interface Parameters {
 
 	String OPERATION_GROUP_IDENTIFIER = "go_id";
 	String OPERATION_IDENTIFIER = "o_id";
+	String OPERATION_TYPE_IDENTIFIER = "t_o_id";
 	String ACT_IDENTIFIER = "a_id";
 	String ACTS_IDENTIFIERS = "a_ids";
 	String ACTS_REFERENCES = "a_refs";

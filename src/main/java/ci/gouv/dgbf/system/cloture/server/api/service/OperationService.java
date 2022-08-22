@@ -20,6 +20,31 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 	String PATH = "operations";
 	
 	@POST
+	@Path("creation")
+	@Produces({MediaType.APPLICATION_JSON})
+	@Operation(description = "Créer une opération")
+	@APIResponses(value = {
+			@APIResponse(description = "Une opération créée",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			,@APIResponse(description = "Erreur lors de la création d'une opération",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response create(
+		@Parameter(name = OperationDto.JSON_TYPE_IDENTIFIER,description = "Type")
+		@QueryParam(OperationDto.JSON_TYPE_IDENTIFIER) String typeIdentifier
+		
+		,@Parameter(name = OperationDto.JSON_CODE,description = "Code")
+		@QueryParam(OperationDto.JSON_CODE) String code
+		
+		,@Parameter(name = OperationDto.JSON_NAME,description = "Libellé")
+		@QueryParam(OperationDto.JSON_NAME) String name
+		
+		,@Parameter(name = OperationDto.JSON_REASON,description = "Motif")
+		@QueryParam(OperationDto.JSON_REASON) String reason
+		
+		,@Parameter(name = OperationDto.JSON___AUDIT_WHO__,description = "Audit acteur")
+		@QueryParam(OperationDto.JSON_REASON) String auditWho
+	);
+	
+	@POST
 	@Path("execution")
 	@Produces({MediaType.APPLICATION_JSON})
 	@Operation(description = "Exécuter une opération")
@@ -28,11 +53,11 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 			,@APIResponse(description = "Erreur lors de l'exécution d'une opération",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response execute(
-		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
-		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
+		@Parameter(name = ScriptDto.JSON_IDENTIFIER,description = "Identifiant")
+		@QueryParam(ScriptDto.JSON_IDENTIFIER) String identifier
 		
-		,@Parameter(name = OperationDto.JSON_TRIGGER,description = "Déclencheur")
-		@QueryParam(OperationDto.JSON_TRIGGER) String trigger
+		,@Parameter(name = ScriptDto.JSON_TRIGGER,description = "Déclencheur")
+		@QueryParam(ScriptDto.JSON_TRIGGER) String trigger
 		
 		,@Parameter(name = PARAMETER_NAME_BLOCKING,description = "Bloquant")
 		@QueryParam(PARAMETER_NAME_BLOCKING) Boolean blocking
