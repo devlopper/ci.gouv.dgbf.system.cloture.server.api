@@ -41,7 +41,7 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 		@QueryParam(OperationDto.JSON_REASON) String reason
 		
 		,@Parameter(name = OperationDto.JSON___AUDIT_WHO__,description = "Audit acteur")
-		@QueryParam(OperationDto.JSON_REASON) String auditWho
+		@QueryParam(OperationDto.JSON___AUDIT_WHO__) String auditWho
 	);
 	
 	@POST
