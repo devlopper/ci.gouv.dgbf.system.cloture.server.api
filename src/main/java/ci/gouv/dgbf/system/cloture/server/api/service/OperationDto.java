@@ -19,6 +19,8 @@ public interface OperationDto extends IdentifiableSystemScalarStringIdentifiable
 	String JSON_REASON = "motif";
 	
 	String JSON_TYPE_IDENTIFIER = "type_identifiant";
+	String JSON_ACTS_IDENTIFIERS = "actes_identifiants";
+	String JSON_EXISTING_IGNORABLE = "ignorer_existant";
 	
 	String JSON___AUDIT__ = Audited.JSON___AUDIT__;
 	String JSONS___AUDITS__ = Audited.JSONS___AUDITS__;
