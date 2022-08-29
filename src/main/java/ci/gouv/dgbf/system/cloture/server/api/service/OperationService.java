@@ -26,11 +26,11 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 	/* Creation */
 	
 	@POST
-	@Path("creation")
-	@Produces({MediaType.APPLICATION_JSON})
+	@Path("/")
+	@Produces({MediaType.TEXT_PLAIN})
 	@Operation(description = "Créer une opération")
 	@APIResponses(value = {
-			@APIResponse(description = "Une opération créée",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(description = "Une opération créée",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors de la création d'une opération",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response create(
@@ -54,10 +54,10 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 	
 	@POST
 	@Path("actes")
-	@Produces({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.TEXT_PLAIN})
 	@Operation(description = "Ajouter des actes")
 	@APIResponses(value = {
-			@APIResponse(description = "Des actes ajoutés",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(description = "Des actes ajoutés",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors de l'ajout des actes",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response addAct(
@@ -75,10 +75,10 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 	
 	@POST
 	@Path("actes-exhaustifs")
-	@Produces({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.TEXT_PLAIN})
 	@Operation(description = "Ajouter des actes exhaustivement")
 	@APIResponses(value = {
-			@APIResponse(description = "Des actes ajoutés exhaustivement",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(description = "Des actes ajoutés exhaustivement",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors de l'ajout exhaustif des actes",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response addActComprehensively(
@@ -93,10 +93,10 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 	
 	@POST
 	@Path("actes-filtres")
-	@Produces({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.TEXT_PLAIN})
 	@Operation(description = "Ajouter des actes filtrés")
 	@APIResponses(value = {
-			@APIResponse(description = "Des actes filtrés ajoutés",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(description = "Des actes filtrés ajoutés",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors de l'ajout des actes filtrés",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response addActByFilter(
@@ -119,10 +119,10 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 	
 	@DELETE
 	@Path("actes")
-	@Produces({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.TEXT_PLAIN})
 	@Operation(description = "Retirer des actes")
 	@APIResponses(value = {
-			@APIResponse(description = "Des actes retirés",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(description = "Des actes retirés",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors du retrait des actes",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response removeAct(
@@ -140,10 +140,10 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 	
 	@DELETE
 	@Path("actes-exhaustifs")
-	@Produces({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.TEXT_PLAIN})
 	@Operation(description = "Retirer des actes exhaustivement")
 	@APIResponses(value = {
-			@APIResponse(description = "Des actes retirés exhaustivement",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(description = "Des actes retirés exhaustivement",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors du retrait exhaustif des actes",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response removeActComprehensively(
@@ -158,10 +158,10 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 	
 	@DELETE
 	@Path("actes-filtres")
-	@Produces({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.TEXT_PLAIN})
 	@Operation(description = "Retirer des actes filtrés")
 	@APIResponses(value = {
-			@APIResponse(description = "Des actes filtrés retirés",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(description = "Des actes filtrés retirés",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
 			,@APIResponse(description = "Erreur lors du retrait des actes filtrés",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
 	Response removeActByFilter(
