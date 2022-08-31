@@ -6,7 +6,4 @@ public interface OperationType extends IdentifiableSystemScalarStringIdentifiabl
 
 	String NAME = "Type d'opération";
 	String NAME_PLURAL = "Types d'opération";
-	
-	String CODE_DEVERROUILLAGE = "DEVERROUILLAGE";
-	String CODE_VERROUILLAGE = "VERROUILLAGE";
 }

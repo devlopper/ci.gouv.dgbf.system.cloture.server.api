@@ -11,6 +11,9 @@ public interface Operation extends IdentifiableSystemScalarStringIdentifiableBus
 	String getReason();
 	Operation setReason(String reason);
 	
+	OperationStatus getStatus();
+	Operation setStatus(OperationStatus status);
+	
 	@Override
 	Operation setCode(String code);
 	

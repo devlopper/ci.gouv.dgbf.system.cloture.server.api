@@ -14,6 +14,7 @@ public interface OperationBusiness extends SpecificBusiness<Operation> {
 	
 	String CREATE_AUDIT_IDENTIFIER = "CREATION_OPERATION";
 	String CREATE_LABEL = "Création opération";
+	Result create(String typeIdentifier,String code,String name,String reason,String auditWho,Boolean sequentialExecution);
 	Result create(String typeIdentifier,String code,String name,String reason,String auditWho);
 	
 	/* Add */
@@ -42,4 +43,11 @@ public interface OperationBusiness extends SpecificBusiness<Operation> {
 	String REMOVE_ACT_BY_FILTER_AUDIT_IDENTIFIER = "RETRAIT_ACTE_PAR_FILTRE_A_OPERATION";
 	String REMOVE_ACT_BY_FILTER_LABEL = "Retrait actes par filtre à opération";
 	Result removeActByFilter(String identifier,Filter filter,Boolean existingIgnorable,String auditWho);
+	
+	/* Execution */
+	
+	String START_AUDIT_IDENTIFIER = "DEMARRAGE_OPERATION";
+	String START_LABEL = "Démarrage opération";
+	Result start(String identifier,String auditWho);
+	
 }
