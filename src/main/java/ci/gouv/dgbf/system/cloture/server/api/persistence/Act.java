@@ -10,6 +10,9 @@ public interface Act extends IdentifiableSystemScalarStringIdentifiableBusinessS
 	ActType getType();
 	Act setType(ActType type);
 	
+	String getReference();
+	Act setReference(String reference);
+	
 	String NAME = "Acte";
 	String NAME_PLURAL = "Actes";
 	

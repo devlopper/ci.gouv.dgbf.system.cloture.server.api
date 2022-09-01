@@ -9,4 +9,7 @@ public interface OperationAct extends IdentifiableSystemScalarString {
 	
 	Act getAct();
 	OperationAct setAct(Act act);
+	
+	Boolean getProcessed();
+	OperationAct setProcessed(Boolean processed);
 }
