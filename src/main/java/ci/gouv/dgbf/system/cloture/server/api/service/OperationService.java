@@ -197,20 +197,6 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 		,@Parameter(name = OperationDto.JSON___AUDIT_WHO__,description = "Audit acteur")
 		@QueryParam(OperationDto.JSON___AUDIT_WHO__) String auditWho
 	);
-	/*
-	@GET
-	@Path("status")
-	@Produces({MediaType.TEXT_PLAIN})
-	@Operation(description = "Obtenir le status d'exécution d'une opération")
-	@APIResponses(value = {
-			@APIResponse(description = "Le status d'exécution d'une opération obtenue",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
-			,@APIResponse(description = "Erreur lors de l'obtention du status d'exécution d'une opération",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
-	})
-	Response getStatus(
-		@Parameter(name = PARAMETER_NAME_IDENTIFIER,description = PARAMETER_NAME_IDENTIFIER_DESCRIPTION_FRENCH)
-		@QueryParam(PARAMETER_NAME_IDENTIFIER) String identifier
-	);
-	*/
 	
 	String PARAMETER_NAME_BLOCKING = "bloquant";
 }

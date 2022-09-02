@@ -7,4 +7,5 @@ public interface OperationStatusDto extends IdentifiableSystemScalarStringIdenti
 	String JSON_IDENTIFIER = "identifiant";
 	String JSON_CODE = "code";
 	String JSON_NAME = "libelle";
+	String JSON_ORDER_NUMBER = "numero_ordre";
 }
