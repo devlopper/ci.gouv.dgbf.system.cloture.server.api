@@ -15,8 +15,10 @@ public interface OperationDto extends IdentifiableSystemScalarStringIdentifiable
 	String JSON_CODE = "code";
 	String JSON_NAME = "libelle";
 	String JSON_TYPE = "type";
-	String JSON_TYPE_AS_STRING = "type_chaine";
+	String JSON_TYPE_AS_STRING = JSON_TYPE+"_chaine";
 	String JSON_REASON = "motif";
+	String JSON_STATUS = "statut";
+	String JSON_STATUS_AS_STRING = JSON_STATUS+"_chaine";
 	
 	String JSON_TYPE_IDENTIFIER = "type_identifiant";
 	String JSON_ACTS_IDENTIFIERS = "actes_identifiants";

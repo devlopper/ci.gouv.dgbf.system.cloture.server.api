@@ -46,8 +46,9 @@ public interface OperationBusiness extends SpecificBusiness<Operation> {
 	
 	/* Execution */
 	
-	String START_AUDIT_IDENTIFIER = "DEMARRAGE_OPERATION";
-	String START_LABEL = "Démarrage opération";
-	Result start(String identifier,String auditWho);
+	String START_EXECUTION_AUDIT_IDENTIFIER = "DEMARRAGE_EXECUTION_OPERATION";
+	String START_EXECUTION_LABEL = "Démarrage opération";
+	Result startExecution(String identifier,String auditWho);
 	
+	String EXECUTION_AUDIT_IDENTIFIER = "EXECUTION_OPERATION";
 }

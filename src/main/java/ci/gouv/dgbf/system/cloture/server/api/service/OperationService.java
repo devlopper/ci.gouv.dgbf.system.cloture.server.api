@@ -185,20 +185,17 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 	@POST
 	@Path("execution")
 	@Produces({MediaType.APPLICATION_JSON})
-	@Operation(description = "Exécuter une opération")
+	@Operation(description = "Démarrer l'exécution")
 	@APIResponses(value = {
-			@APIResponse(description = "Une opération exécutée",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
-			,@APIResponse(description = "Erreur lors de l'exécution d'une opération",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			@APIResponse(description = "L'exécution démarrée",responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+			,@APIResponse(description = "Erreur lors du démarrage de l'exécution",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
 	})
-	Response execute(
-		@Parameter(name = ScriptDto.JSON_IDENTIFIER,description = "Identifiant")
-		@QueryParam(ScriptDto.JSON_IDENTIFIER) String identifier
+	Response startExecution(
+		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
+		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
 		
-		,@Parameter(name = ScriptDto.JSON_TRIGGER,description = "Déclencheur")
-		@QueryParam(ScriptDto.JSON_TRIGGER) String trigger
-		
-		,@Parameter(name = PARAMETER_NAME_BLOCKING,description = "Bloquant")
-		@QueryParam(PARAMETER_NAME_BLOCKING) Boolean blocking
+		,@Parameter(name = OperationDto.JSON___AUDIT_WHO__,description = "Audit acteur")
+		@QueryParam(OperationDto.JSON___AUDIT_WHO__) String auditWho
 	);
 	/*
 	@GET
