@@ -20,6 +20,7 @@ public interface OperationDto extends IdentifiableSystemScalarStringIdentifiable
 	String JSON_STATUS = "statut";
 	String JSON_STATUS_CODE = JSON_STATUS+"_code";
 	String JSON_STATUS_AS_STRING = JSON_STATUS+"_chaine";
+	String JSON_CREATED = "creee";
 	String JSON_STARTED = "demarree";
 	String JSON_EXECUTED = "executee";
 	String JSON_COLOR = "couleur";
@@ -36,4 +37,5 @@ public interface OperationDto extends IdentifiableSystemScalarStringIdentifiable
 	String JSON___AUDIT_WHEN__ = Audited.JSON___AUDIT_WHEN__;
 	
 	String JSONS_STRINGS = "chaines";
+	String JSONS_STATUSES = "statuts";
 }
