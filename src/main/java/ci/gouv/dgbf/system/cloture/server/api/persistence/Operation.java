@@ -14,6 +14,12 @@ public interface Operation extends IdentifiableSystemScalarStringIdentifiableBus
 	OperationStatus getStatus();
 	Operation setStatus(OperationStatus status);
 	
+	Boolean getStarted();
+	Operation setStarted(Boolean started);
+	
+	Boolean getExecuted();
+	Operation setExecuted(Boolean executed);
+	
 	@Override
 	Operation setCode(String code);
 	

@@ -23,6 +23,7 @@ public interface OperationDto extends IdentifiableSystemScalarStringIdentifiable
 	String JSON_CREATED = "creee";
 	String JSON_STARTED = "demarree";
 	String JSON_EXECUTED = "executee";
+	String JSON_NUMBER_OF_ACTS = "nombre_actes";
 	String JSON_COLOR = "couleur";
 	
 	String JSON_TYPE_IDENTIFIER = "type_identifiant";
