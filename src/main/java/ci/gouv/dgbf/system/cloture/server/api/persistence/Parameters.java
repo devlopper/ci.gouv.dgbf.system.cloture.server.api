@@ -31,4 +31,6 @@ public interface Parameters {
 	String ACT_ADDED_TO_SPECIFIED_OPERATION = "a_a_o_s";
 	
 	String OPERATION_STATUS_IDENTIFIER = "s_o_id";
+	
+	String IMPUTATIONS_IDENTIFIERS = "imputations_ids";
 }

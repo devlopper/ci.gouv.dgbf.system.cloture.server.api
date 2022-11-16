@@ -17,7 +17,7 @@ public interface OperationBusiness extends SpecificBusiness<Operation> {
 	Result create(String typeIdentifier,String code,String name,String reason,String auditWho,Boolean sequentialExecution);
 	Result create(String typeIdentifier,String code,String name,String reason,String auditWho);
 	
-	/* Add */
+	/* Add Acts */
 	
 	String ADD_ACT_AUDIT_IDENTIFIER = "AJOUT_ACTE_A_OPERATION";
 	String ADD_ACT_LABEL = "Ajout actes à opération";
@@ -28,12 +28,12 @@ public interface OperationBusiness extends SpecificBusiness<Operation> {
 	String ADD_ACT_BY_FILTER_LABEL = "Ajout actes par filtre à opération";
 	Result addActByFilter(String identifier,Filter filter,Boolean existingIgnorable,String auditWho);
 	
-	String ADD_COMPREHENSIVELY_AUDIT_IDENTIFIER = "AJOUT_EXHAUSTIF_ACTE_A_OPERATION";
-	String ADD_COMPREHENSIVELY_LABEL = "Ajout exhaustif actes à opération";
+	String ADD_ACT_COMPREHENSIVELY_AUDIT_IDENTIFIER = "AJOUT_EXHAUSTIF_ACTE_A_OPERATION";
+	String ADD_ACT_COMPREHENSIVELY_LABEL = "Ajout exhaustif actes à opération";
 	Result addActComprehensively(String identifier,Collection<String> actsIdentifiers,String auditWho);
 	Result addActComprehensively(String identifier,String auditWho,String...actsIdentifiers);
 	
-	/* Remove */
+	/* Remove Acts */
 	
 	String REMOVE_ACT_AUDIT_IDENTIFIER = "RETRAIT_ACTE_A_OPERATION";
 	String REMOVE_ACT_LABEL = "Retrait actes à opération";
@@ -43,6 +43,33 @@ public interface OperationBusiness extends SpecificBusiness<Operation> {
 	String REMOVE_ACT_BY_FILTER_AUDIT_IDENTIFIER = "RETRAIT_ACTE_PAR_FILTRE_A_OPERATION";
 	String REMOVE_ACT_BY_FILTER_LABEL = "Retrait actes par filtre à opération";
 	Result removeActByFilter(String identifier,Filter filter,Boolean existingIgnorable,String auditWho);
+	
+	/* Add Imputations */
+	
+	String ADD_IMPUTATION_AUDIT_IDENTIFIER = "AJOUT_IMPUTATION_A_OPERATION";
+	String ADD_IMPUTATION_LABEL = "Ajout imputations à opération";
+	Result addImputation(String identifier,Collection<String> imputationsIdentifiers,Boolean existingIgnorable,String auditWho);
+	Result addImputation(String identifier,Boolean existingIgnorable,String auditWho,String...imputationsIdentifiers);
+	
+	String ADD_IMPUTATION_BY_FILTER_AUDIT_IDENTIFIER = "AJOUT_IMPUTATION_PAR_FILTRE_A_OPERATION";
+	String ADD_IMPUTATION_BY_FILTER_LABEL = "Ajout imputations par filtre à opération";
+	Result addImputationByFilter(String identifier,Filter filter,Boolean existingIgnorable,String auditWho);
+	
+	String ADD_IMPUTATION_COMPREHENSIVELY_AUDIT_IDENTIFIER = "AJOUT_EXHAUSTIF_IMPUTATION_A_OPERATION";
+	String ADD_IMPUTATION_COMPREHENSIVELY_LABEL = "Ajout exhaustif imputations à opération";
+	Result addImputationComprehensively(String identifier,Collection<String> imputationsIdentifiers,String auditWho);
+	Result addImputationComprehensively(String identifier,String auditWho,String...imputationsIdentifiers);
+	
+	/* Remove Imputations */
+	
+	String REMOVE_IMPUTATION_AUDIT_IDENTIFIER = "RETRAIT_ACTE_A_OPERATION";
+	String REMOVE_IMPUTATION_LABEL = "Retrait actes à opération";
+	Result removeImputation(String identifier,Collection<String> imputationsIdentifiers,Boolean existingIgnorable,String auditWho);
+	Result removeImputation(String identifier,Boolean existingIgnorable,String auditWho,String...imputationsIdentifiers);
+	
+	String REMOVE_IMPUTATION_BY_FILTER_AUDIT_IDENTIFIER = "RETRAIT_ACTE_PAR_FILTRE_A_OPERATION";
+	String REMOVE_IMPUTATION_BY_FILTER_LABEL = "Retrait actes par filtre à opération";
+	Result removeImputationByFilter(String identifier,Filter filter,Boolean existingIgnorable,String auditWho);
 	
 	/* Execution */
 	

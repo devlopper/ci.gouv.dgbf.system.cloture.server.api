@@ -103,10 +103,10 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
 		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
 			
-		,@Parameter(name = PARAMETER_NAME_FILTER_AS_STRING,description = "Identifiant")
+		,@Parameter(name = PARAMETER_NAME_FILTER_AS_STRING,description = PARAMETER_NAME_FILTER_AS_STRING_DESCRIPTION_FRENCH)
 		@QueryParam(PARAMETER_NAME_FILTER_AS_STRING) String filterAsString
 		
-		,@Parameter(name = PARAMETER_NAME_FILTER_FORMAT,description = "Identifiant")
+		,@Parameter(name = PARAMETER_NAME_FILTER_FORMAT,description = PARAMETER_NAME_FILTER_FORMAT_DESCRIPTION_FRENCH)
 		@QueryParam(PARAMETER_NAME_FILTER_FORMAT) FilterFormat filterFormat
 		
 		,@Parameter(name = OperationDto.JSON_EXISTING_IGNORABLE,description = "Existant ignorable")
@@ -168,10 +168,140 @@ public interface OperationService extends org.cyk.utility.service.SpecificServic
 		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
 		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
 			
-		,@Parameter(name = PARAMETER_NAME_FILTER_AS_STRING,description = "Identifiant")
+		,@Parameter(name = PARAMETER_NAME_FILTER_AS_STRING,description = PARAMETER_NAME_FILTER_AS_STRING_DESCRIPTION_FRENCH)
 		@QueryParam(PARAMETER_NAME_FILTER_AS_STRING) String filterAsString
 		
-		,@Parameter(name = PARAMETER_NAME_FILTER_FORMAT,description = "Identifiant")
+		,@Parameter(name = PARAMETER_NAME_FILTER_FORMAT,description = PARAMETER_NAME_FILTER_FORMAT_DESCRIPTION_FRENCH)
+		@QueryParam(PARAMETER_NAME_FILTER_FORMAT) FilterFormat filterFormat
+		
+		,@Parameter(name = OperationDto.JSON_EXISTING_IGNORABLE,description = "Existant ignorable")
+		@QueryParam(OperationDto.JSON_EXISTING_IGNORABLE) Boolean existingIgnorable
+			
+		,@Parameter(name = OperationDto.JSON___AUDIT_WHO__,description = "Audit acteur")
+		@QueryParam(OperationDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	/* Add Imputation */
+	
+	@POST
+	@Path("imputations")
+	@Produces({MediaType.TEXT_PLAIN})
+	@Operation(description = "Ajouter des imputations")
+	@APIResponses(value = {
+			@APIResponse(description = "Des imputations ajoutées",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors de l'ajout des imputations",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response addImputation(
+		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
+		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
+		
+		,@Parameter(name = OperationDto.JSON_ACTS_IDENTIFIERS,description = "Identifiants imputations")
+		@QueryParam(OperationDto.JSON_ACTS_IDENTIFIERS) List<String> actsIdentifiers
+		
+		,@Parameter(name = OperationDto.JSON_EXISTING_IGNORABLE,description = "Existant ignorable")
+		@QueryParam(OperationDto.JSON_EXISTING_IGNORABLE) Boolean existingIgnorable
+		
+		,@Parameter(name = OperationDto.JSON___AUDIT_WHO__,description = "Audit acteur")
+		@QueryParam(OperationDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	@POST
+	@Path("imputations-exhaustifs")
+	@Produces({MediaType.TEXT_PLAIN})
+	@Operation(description = "Ajouter des imputations exhaustivement")
+	@APIResponses(value = {
+			@APIResponse(description = "Des imputations ajoutées exhaustivement",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors de l'ajout exhaustif des imputations",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response addImputationComprehensively(
+		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
+		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
+			
+		,@Parameter(name = OperationDto.JSON_ACTS_IDENTIFIERS,description = "Identifiants imputations")
+		@QueryParam(OperationDto.JSON_ACTS_IDENTIFIERS) List<String> actsIdentifiers
+			
+		,@Parameter(name = OperationDto.JSON___AUDIT_WHO__,description = "Audit acteur")
+		@QueryParam(OperationDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	@POST
+	@Path("imputations-filtres")
+	@Produces({MediaType.TEXT_PLAIN})
+	@Operation(description = "Ajouter des imputations filtrées")
+	@APIResponses(value = {
+			@APIResponse(description = "Des imputations filtrées ajoutées",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors de l'ajout des imputations filtrées",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response addImputationByFilter(
+		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
+		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
+			
+		,@Parameter(name = PARAMETER_NAME_FILTER_AS_STRING,description = PARAMETER_NAME_FILTER_AS_STRING_DESCRIPTION_FRENCH)
+		@QueryParam(PARAMETER_NAME_FILTER_AS_STRING) String filterAsString
+		
+		,@Parameter(name = PARAMETER_NAME_FILTER_FORMAT,description = PARAMETER_NAME_FILTER_FORMAT_DESCRIPTION_FRENCH)
+		@QueryParam(PARAMETER_NAME_FILTER_FORMAT) FilterFormat filterFormat
+		
+		,@Parameter(name = OperationDto.JSON_EXISTING_IGNORABLE,description = "Existant ignorable")
+		@QueryParam(OperationDto.JSON_EXISTING_IGNORABLE) Boolean existingIgnorable
+			
+		,@Parameter(name = OperationDto.JSON___AUDIT_WHO__,description = "Audit acteur")
+		@QueryParam(OperationDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	/* Remove Imputation */
+	
+	@DELETE
+	@Path("imputations")
+	@Produces({MediaType.TEXT_PLAIN})
+	@Operation(description = "Retirer des imputations")
+	@APIResponses(value = {
+			@APIResponse(description = "Des imputations retirées",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors du retrait des imputations",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response removeImputation(
+		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
+		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
+		
+		,@Parameter(name = OperationDto.JSON_ACTS_IDENTIFIERS,description = "Identifiants imputations")
+		@QueryParam(OperationDto.JSON_ACTS_IDENTIFIERS) List<String> imputationsIdentifiers
+		
+		,@Parameter(name = OperationDto.JSON_EXISTING_IGNORABLE,description = "Existant ignorable")
+		@QueryParam(OperationDto.JSON_EXISTING_IGNORABLE) Boolean existingIgnorable
+		
+		,@Parameter(name = OperationDto.JSON___AUDIT_WHO__,description = "Audit acteur")
+		@QueryParam(OperationDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	@DELETE
+	@Path("imputations-exhaustifs")
+	@Produces({MediaType.TEXT_PLAIN})
+	@Operation(description = "Retirer des imputations exhaustivement")
+	@APIResponses(value = {
+			@APIResponse(description = "Des imputations retirées exhaustivement",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors du retrait exhaustif des imputations",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response removeImputationComprehensively(
+		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
+		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
+			
+		,@Parameter(name = OperationDto.JSON_ACTS_IDENTIFIERS,description = "Identifiants imputations")
+		@QueryParam(OperationDto.JSON_ACTS_IDENTIFIERS) List<String> imputationsIdentifiers
+			
+		,@Parameter(name = OperationDto.JSON___AUDIT_WHO__,description = "Audit acteur")
+		@QueryParam(OperationDto.JSON___AUDIT_WHO__) String auditWho);
+	
+	@DELETE
+	@Path("imputations-filtres")
+	@Produces({MediaType.TEXT_PLAIN})
+	@Operation(description = "Retirer des imputations filtrées")
+	@APIResponses(value = {
+			@APIResponse(description = "Des imputations filtrées retirées",responseCode = "200", content = @Content(mediaType = MediaType.TEXT_PLAIN))
+			,@APIResponse(description = "Erreur lors du retrait des imputations filtrées",responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON))
+	})
+	Response removeImputationByFilter(
+		@Parameter(name = OperationDto.JSON_IDENTIFIER,description = "Identifiant")
+		@QueryParam(OperationDto.JSON_IDENTIFIER) String identifier
+			
+		,@Parameter(name = PARAMETER_NAME_FILTER_AS_STRING,description = PARAMETER_NAME_FILTER_AS_STRING_DESCRIPTION_FRENCH)
+		@QueryParam(PARAMETER_NAME_FILTER_AS_STRING) String filterAsString
+		
+		,@Parameter(name = PARAMETER_NAME_FILTER_FORMAT,description = PARAMETER_NAME_FILTER_FORMAT_DESCRIPTION_FRENCH)
 		@QueryParam(PARAMETER_NAME_FILTER_FORMAT) FilterFormat filterFormat
 		
 		,@Parameter(name = OperationDto.JSON_EXISTING_IGNORABLE,description = "Existant ignorable")
