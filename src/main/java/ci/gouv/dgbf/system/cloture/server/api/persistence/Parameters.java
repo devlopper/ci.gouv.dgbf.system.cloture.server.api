@@ -13,8 +13,12 @@ public interface Parameters {
 	String OPERATION_EXECUTED = "o_ex";
 	String ORDER_NUMBER_IS_LOWEST = "on_is_lowest";
 	
+	String EXERCISE_IDENTIFIER = "exo_id";
+	String ECONOMIC_NATURE_IDENTIFIER = "ne_id";
+	
 	String ACT_IDENTIFIER = "a_id";
 	String ACT_TYPE_IDENTIFIER = "t_a_id";
+	String ACTIVITY_IDENTIFIER = "activite_id";
 	
 	String ACTS_IDENTIFIERS = "a_ids";
 	String ACTS_REFERENCES = "a_refs";
