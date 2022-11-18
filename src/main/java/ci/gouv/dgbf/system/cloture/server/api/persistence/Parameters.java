@@ -28,7 +28,7 @@ public interface Parameters {
 	String ACT_OPERATION_TYPE = "toa_id";
 	String SEARCH = "r";
 	
-	String ACT_ADDED_TO_SPECIFIED_OPERATION = "a_a_o_s";
+	String ADDED_TO_SPECIFIED_OPERATION = "a_o_s";
 	
 	String OPERATION_STATUS_IDENTIFIER = "s_o_id";
 	

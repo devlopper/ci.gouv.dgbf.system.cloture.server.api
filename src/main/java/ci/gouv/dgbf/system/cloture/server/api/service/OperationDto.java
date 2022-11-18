@@ -24,10 +24,12 @@ public interface OperationDto extends IdentifiableSystemScalarStringIdentifiable
 	String JSON_STARTED = "demarree";
 	String JSON_EXECUTED = "executee";
 	String JSON_NUMBER_OF_ACTS = "nombre_actes";
+	String JSON_NUMBER_OF_IMPUTATIONS = "nombre_imputations";
 	String JSON_COLOR = "couleur";
 	
 	String JSON_TYPE_IDENTIFIER = "type_identifiant";
 	String JSON_ACTS_IDENTIFIERS = "actes_identifiants";
+	String JSON_IMPUTATIONS_IDENTIFIERS = "imputations_identifiants";
 	String JSON_EXISTING_IGNORABLE = "ignorer_existant";
 	
 	String JSON___AUDIT__ = Audited.JSON___AUDIT__;
