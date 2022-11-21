@@ -1,15 +1,7 @@
 package ci.gouv.dgbf.system.cloture.server.api.persistence;
 
-import org.cyk.utility.service.entity.IdentifiableSystemScalarString;
-
-public interface OperationAct extends IdentifiableSystemScalarString {
-	
-	Operation getOperation();
-	OperationAct setOperation(Operation operation);
+public interface OperationAct extends OperationData {
 	
 	Act getAct();
 	OperationAct setAct(Act act);
-	
-	Boolean getProcessed();
-	OperationAct setProcessed(Boolean processed);
 }
